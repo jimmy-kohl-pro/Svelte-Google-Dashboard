@@ -18,15 +18,15 @@
     <PrimaryAction on:click={() => console.log('primary action click')}>
       <Media class="card-media-16x9" style="background-image: url({info.thumbnail});" aspectRatio="16x9" />
       <Content class="mdc-typography--body2">
-        <h2 class="mdc-typography--headline6" style="margin: 0;">
+        <h3 class="mdc-typography--headline6" style="margin: 0;">
           {info.title}
-        </h2>
-        <h3
+        </h3>
+        <h4
           class="mdc-typography--subtitle2"
           style="margin: 0 0 10px; color: #888;"
         >
           Publié par {info.author}
-        </h3>
+        </h4>
         {info.description}
       </Content>
     </PrimaryAction>

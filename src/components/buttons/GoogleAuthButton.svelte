@@ -8,8 +8,8 @@
     export let token: string;
 
     $: handleCredentialResponse = async (response: any) => {
-        const profile = await getProfile(response.credential);
-        console.log('profile :', profile);
+        // const profile = await getProfile(response.credential); <== get profile name (not working)
+        // console.log('profile :', profile);
         token = response.credential;
     }
     onMount(() => {

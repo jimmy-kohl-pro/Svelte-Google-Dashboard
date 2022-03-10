@@ -59,15 +59,23 @@
 					<path fill="currentColor" d={mdiGithub} />
 				</Icon>
 			</IconButton>
+			<Button on:click={switchTheme}>
+				<Label>{lightTheme ? 'Lights off' : 'Lights on'}</Label>
+			</Button>
 		</Section>
 	</Row>
 </TopAppBar>
 
 <AutoAdjust {topAppBar} style="display: flex; justify-content: space-between;">
-	<div class="container"><slot /></div>
-	<div class="container">
-		<Button on:click={switchTheme}>
-			<Label>{lightTheme ? 'Lights off' : 'Lights on'}</Label>
-		</Button>
-	</div>
+	<div class="app-container"><slot /></div>
 </AutoAdjust>
+
+<style>
+	.app-container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
