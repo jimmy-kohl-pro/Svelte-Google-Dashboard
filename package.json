@@ -22,6 +22,7 @@
 		"@smui/circular-progress": "^6.0.0-beta.15",
 		"@smui/fab": "^6.0.0-beta.15",
 		"@smui/icon-button": "^6.0.0-beta.13",
+		"@smui/layout-grid": "^6.0.0-beta.15",
 		"@smui/list": "^6.0.0-beta.15",
 		"@smui/paper": "^6.0.0-beta.15",
 		"@smui/textfield": "^6.0.0-beta.15",

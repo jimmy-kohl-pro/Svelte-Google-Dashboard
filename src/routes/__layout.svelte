@@ -13,6 +13,7 @@
 	import { mdiGithub, mdiWeb } from '@mdi/js';
 	import GoogleAuthButton from '../components/buttons/GoogleAuthButton.svelte';
 	import { gToken } from '../store/user';
+	import { goto } from '$app/navigation';
 
 	let token = "";
 
@@ -42,7 +43,8 @@
 <TopAppBar bind:this={topAppBar} variant="standard">
 	<Row>
 		<Section>
-			<Title>My App</Title>
+			<Button on:click={() => goto('/')}><Title>Home</Title></Button>
+			<Button on:click={() => goto('/youtube')}>Youtube</Button>
 		</Section>
 		<Section align="end" toolbar>
 			{#if token}

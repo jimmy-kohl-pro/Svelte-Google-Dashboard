@@ -20,9 +20,11 @@
         items.forEach((item: any) => {
             searchResults.push({
                 title: item?.snippet?.title,
+                author: item?.snippet?.channelTitle,
                 description: item?.snippet?.description,
                 thumbnail: item?.snippet?.thumbnails?.high?.url,
                 videoId: item?.id?.videoId,
+
             });
         });
         isLoading = false;
@@ -36,7 +38,7 @@
     }
 </script>
 
-<div class="solo-demo-container solo-container">
+<div class="solo-search-container solo-container">
     <Paper class="solo-paper" elevation={6}>
     <Icon class="material-icons">search</Icon>
     <Input
@@ -57,14 +59,10 @@
     </Fab>
 </div>
 
-<pre class="status">Value: {value}</pre>
-
 <style>
-    .solo-demo-container {
+    .solo-search-container {
         padding: 36px 18px;
-        background-color: var(--mdc-theme-background, #f8f8f8);
-        border: 1px solid
-            var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.1));
+        width: 100%;
     }
 
     .solo-container {

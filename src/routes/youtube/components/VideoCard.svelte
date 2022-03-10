@@ -25,7 +25,7 @@
           class="mdc-typography--subtitle2"
           style="margin: 0 0 10px; color: #888;"
         >
-          And a subtitle.
+          Publié par {info.author}
         </h3>
         {info.description}
       </Content>
