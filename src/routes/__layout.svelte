@@ -11,6 +11,14 @@
 	import { Label, Icon } from '@smui/common';
 	import { Svg } from '@smui/common/elements';
 	import { mdiGithub, mdiWeb } from '@mdi/js';
+	import GoogleAuthButton from '../components/buttons/GoogleAuthButton.svelte';
+	import { gToken } from '../store/user';
+
+	let token = "";
+
+	gToken.subscribe(value => {
+		token = value;
+	});
 
 	let topAppBar: TopAppBarComponentDev;
 
@@ -37,14 +45,16 @@
 			<Title>My App</Title>
 		</Section>
 		<Section align="end" toolbar>
-			<IconButton aria-label="GitHub" href="https://github.com/hperrin/svelte-material-ui">
+			{#if token}
+				<Button on:click={() => gToken.set('')}>
+					<Label>Log out</Label>
+				</Button>
+			{:else}
+				<GoogleAuthButton bind:token={$gToken}/>
+			{/if}
+			<IconButton aria-label="GitHub" href="https://github.com/jimmy-kohl-pro/Svelte-Google-Dashboard">
 				<Icon component={Svg} viewBox="0 0 24 24">
 					<path fill="currentColor" d={mdiGithub} />
-				</Icon>
-			</IconButton>
-			<IconButton aria-label="Demo Site" href="https://sveltematerialui.com">
-				<Icon component={Svg} viewBox="0 0 24 24">
-					<path fill="currentColor" d={mdiWeb} />
 				</Icon>
 			</IconButton>
 		</Section>
